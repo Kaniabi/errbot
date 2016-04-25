@@ -66,7 +66,7 @@ if not PY35_OR_GREATER:
 # if 'develop' in sys.argv: <- we cannot do that as pip is doing that in 2 steps.
 # TODO(gbin): find another way to filter those out if we don't need them.
 
-deps += ['mock',
+test_deps = ['mock',
          'nose',
          'pep8',
          'flaky',
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         },
 
         install_requires=deps,
-        tests_require=['nose', 'webtest', 'requests'],
+        tests_require=test_deps,
         package_data={
             '': ['*.txt', '*.rst', '*.plug', '*.md'],
         },
